@@ -1,0 +1,19 @@
+---
+# tasks file for php
+
+# Wheezy
+- include: main-debian7-php5.yml
+  when: ansible_distribution == 'Debian'
+        and ansible_distribution_major_version == '7'
+        and php_major_version == 5
+
+# Jessie
+- include: main-debian8-php5.yml
+  when: ansible_distribution == 'Debian'
+        and ansible_distribution_major_version == '8'
+        and php_major_version == 5
+
+- include: main-debian8-php7.yml
+  when: ansible_distribution == 'Debian'
+        and ansible_distribution_major_version == '8'
+        and php_major_version == 7
