@@ -1,7 +1,14 @@
 ---
 # defaults file for php
 
+php_install_composer: false
+php_install_laravel: false
+php_laravel_user: root
+
 php_major_version: 5
+php_error_reporting: "E_ALL & ~E_DEPRECATED & ~E_STRICT"
+php_display_errors: "Off"
+php_display_startup_errors: "Off"
 
 php_version5_packages:
 #     - php5-exactimage # fast image manipulation library (PHP bindings)
@@ -50,7 +57,7 @@ php_version5_packages:
 #     - php5-dbg # Debug symbols for PHP5
      - php5-dev # Files for PHP5 module development
 #     - php5-enchant # Enchant module for php5
-#     - php5-fpm # server-side, HTML-embedded scripting language (FPM-CGI binary)
+     - php5-fpm # server-side, HTML-embedded scripting language (FPM-CGI binary)
 #     - php5-gd # GD module for php5
 #     - php5-gmp # GMP module for php5
 #     - php5-imap # IMAP module for php5

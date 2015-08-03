@@ -1,0 +1,9 @@
+---
+
+- apt: name=curl state=present
+
+- shell: curl -sS https://getcomposer.org/installer | php
+  args:
+    chdir: /tmp
+
+- shell: mv /tmp/composer.phar /usr/local/bin/composer

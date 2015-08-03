@@ -1,0 +1,17 @@
+---
+
+- shell: composer global require "laravel/installer=~1.1"
+  when: php_install_composer
+  sudo: yes
+  sudo_user: "{{ php_laravel_user }}"
+
+- stat: path=~/.zshrc
+  register: php_zshrc
+  sudo: yes
+  sudo_user: "{{ php_laravel_user }}"
+
+# Make sure to place the ~/.composer/vendor/bin directory in your PATH so the laravel executable can be located by your system.
+- lineinfile: dest=~/.zshrc line="alias laravel=\"~/.composer/vendor/bin/laravel\"" state=present
+  sudo: yes
+  sudo_user: "{{ php_laravel_user }}"
+  when: php_zshrc.stat.exists == True
