@@ -1,11 +1,18 @@
 ---
-
 # https://www.dotdeb.org/instructions/
 
 - apt_key: url=https://www.dotdeb.org/dotdeb.gpg state=present
 
+# Main repository:
 - apt_repository: repo='deb http://packages.dotdeb.org wheezy all' state=present
-
 - apt_repository: repo='deb-src http://packages.dotdeb.org wheezy all' state=present
+
+# PHP 5.6 on Debian 7 "Wheezy" (without Zend thread safety), add these two lines too:
+#- apt_repository: repo='deb http://packages.dotdeb.org wheezy-php56 all' state=present
+#- apt_repository: repo='deb-src http://packages.dotdeb.org wheezy-php56 all' state=present
+
+# PHP 5.6 on Debian 7 "Wheezy" (with Zend thread safety), add these two lines instead:
+- apt_repository: repo='deb http://packages.dotdeb.org wheezy-php56-zts all' state=present
+- apt_repository: repo='deb-src http://packages.dotdeb.org wheezy-php56-zts all' state=present
 
 - include: debian-php5.yml
