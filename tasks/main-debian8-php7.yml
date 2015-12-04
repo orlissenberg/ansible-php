@@ -1,13 +1,14 @@
 ---
 
-# http://php7.zend.com/repo.php
+# https://www.dotdeb.org/instructions/
 
-- apt_repository: repo='deb http://repos.zend.com/zend-server/early-access/php7/repos ubuntu/' state=present
+- apt_key: url=https://www.dotdeb.org/dotdeb.gpg state=present
 
-- name: Install PHP 7 Nightly
-  apt: name=php7-nightly update_cache=yes state=latest force=yes dpkg_options=force-bad-verify
+- apt_repository: repo='deb http://packages.dotdeb.org jessie all' state=present
 
-- shell: updatedb
+- apt_repository: repo='deb-src http://packages.dotdeb.org jessie all' state=present
+
+- include: debian-php7.yml
 
 #dpkg --force-help
 #dpkg forcing options - control behaviour when problems found:
