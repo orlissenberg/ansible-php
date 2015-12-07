@@ -6,7 +6,7 @@
     - php5-cli
 
 - name: php.ini cli
-  template: src=php-cli.ini.j2 dest=/etc/php5/cli/php.ini owner=root group=root mode=644
+  template: src=php5-cli.ini.j2 dest=/etc/php5/cli/php.ini owner=root group=root mode=644
 
 # Additional packages
 - apt: name={{ item }} update_cache=yes state=latest
@@ -17,9 +17,9 @@
   register: php_fpm_conf
 
 - name: php.ini fpm
-  template: src=php.ini.j2 dest=/etc/php5/fpm/php.ini owner=root group=root mode=644
+  template: src=php5.ini.j2 dest=/etc/php5/fpm/php.ini owner=root group=root mode=644
   when: php_fpm_conf.stat.exists == True
 
 - name: php-fpm.conf
-  template: src=php-fpm.conf.j2 dest=/etc/php5/fpm/php-fpm.conf owner=root group=root mode=644
+  template: src=php5-fpm.conf.j2 dest=/etc/php5/fpm/php-fpm.conf owner=root group=root mode=644
   when: php_fpm_conf.stat.exists == True
