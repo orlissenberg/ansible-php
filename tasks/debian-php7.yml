@@ -1,5 +1,7 @@
 ---
 
+# Remove with: sudo apt-get purge 'php7*'
+
 - apt: name={{ item }} update_cache=yes state=latest
   with_items:
     - php7.0 # server-side, HTML-embedded scripting language (metapackage)
