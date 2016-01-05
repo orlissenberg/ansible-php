@@ -52,3 +52,23 @@ Check the PHP modules
 Serve a Laravel project without a web server
 
     php artisan serve --host 0.0.0.0 --port 8080
+
+In the event of failure:
+
+    sudo apt-get purge php7.0 php7.0-cli php7.0-fpm -y
+    sudo rm -Rf /etc/php/fpm; sudo rm -Rf /etc/php/cli;
+    sudo ﻿systemctl status php7.0-fpm.service
+
+Copy from a fresh installation:
+
+    ﻿sudo cp /etc/php/7.0/fpm/php-fpm.conf /vagrant/ansible/roles/ansible-php/templates/php7-fpm.conf.j2
+    ﻿sudo cp /etc/php/7.0/fpm/php.ini /vagrant/ansible/roles/ansible-php/templates/php7-fpm.ini.j2
+
+Posted December 28, 2015 by Guillaume Plessis
+
+> Packages of the PECL extensions (Memcache, Memcached, Mongo, Redis, Xdebug…) are still missing and require some work from me.
+
+[https://www.dotdeb.org/2015/12/28/php-7-0-1-for-jessie/](https://www.dotdeb.org/2015/12/28/php-7-0-1-for-jessie/)
+
+Installing Memcached Extension via:  
+https://github.com/kasparsd/php-7-debian
