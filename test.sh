@@ -19,6 +19,8 @@ php_laravel_user: debian
 php_error_reporting: "E_ALL"
 php_display_errors: "On"
 php_display_startup_errors: "On"
+php_memcached: true
+php_date_timezone: "Europe/Amsterdam"
 EOF
 
 # Create Ansible config

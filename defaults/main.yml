@@ -4,6 +4,9 @@
 php_install_composer: false
 php_install_laravel: false
 php_laravel_user: root
+php_memcached: false
+# http://php.net/manual/en/timezones.europe.php
+php_date_timezone: ""
 
 php_major_version: 7
 php_error_reporting: "E_ALL & ~E_DEPRECATED & ~E_STRICT"
@@ -14,19 +17,29 @@ php_version7_packages:
 #  - libapache2-mod-php7.0 # server-side, HTML-embedded scripting language (Apache 2 module)
 #  - libphp7.0-embed # HTML-embedded scripting language (Embedded SAPI library)
 #  - php-all-dev # package depending on all supported PHP development packages
+#  - php7.0-apcu # APC User Cache for PHP
+#  - php7.0-apcu-bc # APCu Backwards Compatibility Module
+#  - php7.0-bz2 # bzip2 module for PHP
   - php7.0-cgi # server-side, HTML-embedded scripting language (CGI binary)
   - php7.0-common # Common files for packages built from the PHP source
   - php7.0-curl # CURL module for PHP
 #  - php7.0-dbg # Debug symbols for PHP7.0
 #  - php7.0-dev # Files for PHP7.0 module development
+#  - php7.0-enchant # Enchant module for PHP
   - php7.0-fpm # server-side, HTML-embedded scripting language (FPM-CGI binary)
   - php7.0-gd # GD module for PHP
+#  - php7.0-gmp # GMP module for PHP
+#  - php7.0-igbinary # igbinary serializer for PHP
+#  - php7.0-imagick # Provides a wrapper to the ImageMagick library
   - php7.0-imap # IMAP module for PHP
+#  - php7.0-interbase # Interbase module for PHP
   - php7.0-intl # Internationalisation module for PHP
   - php7.0-json # JSON module for PHP
 #  - php7.0-ldap # LDAP module for PHP
   - php7.0-mcrypt # libmcrypt module for PHP
-#  - php7.0-modules-source # PHP 7.0 modules source package
+  - php7.0-memcached # memcached extension module for PHP, uses libmemcached
+#  - php7.0-mongodb # MongoDB driver for PHP
+#  - php7.0-msgpack # MessagePack serializer for PHP
   - php7.0-mysql # MySQL module for PHP
 #  - php7.0-odbc # ODBC module for PHP
   - php7.0-opcache # Zend OpCache module for PHP
@@ -35,10 +48,14 @@ php_version7_packages:
 #  - php7.0-pspell # pspell module for PHP
 #  - php7.0-readline # readline module for PHP
 #  - php7.0-recode # recode module for PHP
+  - php7.0-redis # PHP extension for interfacing with Redis
 #  - php7.0-snmp # SNMP module for PHP
   - php7.0-sqlite3 # SQLite3 module for PHP
 #  - php7.0-sybase # Sybase module for PHP
 #  - php7.0-tidy # tidy module for PHP
+#  - php7.0-xdebug # Xdebug Module for PHP
+#  - php7.0-xmlrpc # XMLRPC-EPI module for PHP
+#  - php7.0-xsl # XSL module for PHP
 
 php_version5_packages:
 #     - php5-exactimage # fast image manipulation library (PHP bindings)
