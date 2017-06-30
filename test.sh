@@ -13,9 +13,11 @@ EOF
 # Create group_vars for the webservers
 mkdir -p $TMP_DIR/group_vars 2> /dev/null
 cat << EOF > $TMP_DIR/group_vars/webservers
+
 php_install_composer: true
 php_install_laravel: true
-php_laravel_user: debian
+php_laravel_user: laravel
+
 php_error_reporting: "E_ALL"
 php_display_errors: "On"
 php_display_startup_errors: "On"
@@ -36,7 +38,7 @@ cat << EOF > $TMP_DIR/playbook.yml
 
 - hosts: webservers
   gather_facts: yes
-  sudo: yes
+  become: yes
 
   roles:
     - ansible-php

@@ -3,7 +3,7 @@
 
 php_install_composer: false
 php_install_laravel: false
-php_laravel_user: root
+php_laravel_user: laravel
 php_memcached: false
 # http://php.net/manual/en/timezones.europe.php
 php_date_timezone: ""
@@ -13,6 +13,7 @@ php_error_reporting: "E_ALL & ~E_DEPRECATED & ~E_STRICT"
 php_display_errors: "Off"
 php_display_startup_errors: "Off"
 
+# ﻿sudo apt-cache search php7.0
 php_version7_packages:
 #  - libapache2-mod-php7.0 # server-side, HTML-embedded scripting language (Apache 2 module)
 #  - libphp7.0-embed # HTML-embedded scripting language (Embedded SAPI library)
@@ -36,6 +37,7 @@ php_version7_packages:
   - php7.0-intl # Internationalisation module for PHP
   - php7.0-json # JSON module for PHP
 #  - php7.0-ldap # LDAP module for PHP
+  - php7.0-mbstring # MBSTRING module for PHP
   - php7.0-mcrypt # libmcrypt module for PHP
   - php7.0-memcached # memcached extension module for PHP, uses libmemcached
 #  - php7.0-mongodb # MongoDB driver for PHP
@@ -54,6 +56,7 @@ php_version7_packages:
 #  - php7.0-sybase # Sybase module for PHP
 #  - php7.0-tidy # tidy module for PHP
 #  - php7.0-xdebug # Xdebug Module for PHP
+  - php7.0-xml
 #  - php7.0-xmlrpc # XMLRPC-EPI module for PHP
 #  - php7.0-xsl # XSL module for PHP
 

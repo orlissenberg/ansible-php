@@ -2,8 +2,11 @@
 
 - apt: name=curl state=present
 
-- shell: curl -sS https://getcomposer.org/installer | php
+# ﻿[WARNING]: Consider using get_url or uri module rather than running curl
+- name: install composer
+  shell: curl -sS https://getcomposer.org/installer | php
   args:
     chdir: /tmp
 
-- shell: mv /tmp/composer.phar /usr/local/bin/composer
+- name: move composer
+  shell: mv /tmp/composer.phar /usr/local/bin/composer

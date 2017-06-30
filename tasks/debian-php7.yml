@@ -19,7 +19,7 @@
 
 ## Additional packages
 - apt: name={{ item }} update_cache=yes state=latest
-  with_items: php_version7_packages
+  with_items: "{{ php_version7_packages }}"
 
 ## Configuration
 - stat: path=/etc/php/7.0/fpm/php-fpm.conf
