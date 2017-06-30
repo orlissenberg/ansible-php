@@ -1,6 +1,8 @@
 ---
 # tasks file for php
 
+- apt: name=apt-transport-https update_cache=yes state=latest
+
 # Wheezy
 - include: main-debian7-php5.yml
   when: ansible_distribution == 'Debian'

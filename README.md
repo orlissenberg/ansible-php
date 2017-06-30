@@ -36,12 +36,13 @@ License
 MIT
 
 Additional Information
-------------------
+----------------------
 
 DOTDEB no longer does PHP releases, now use:
 
 Ondřej Surý also provides PHP 7.1 packages for Debian
-https://www.colinodell.com/blog/2016-12/installing-php-7-1
+
+[Installing PHP 7.1](https://www.colinodell.com/blog/2016-12/installing-php-7-1)
 
 [Nginx PHP via FastCGI](http://wiki.nginx.org/Configuration#PHP_via_FastCGI)
 

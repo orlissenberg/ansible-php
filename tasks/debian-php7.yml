@@ -4,8 +4,8 @@
 
 - apt: name={{ item }} update_cache=yes state=latest
   with_items:
-    - php7.0 # server-side, HTML-embedded scripting language (metapackage)
-    - php7.0-cli # command-line interpreter for the PHP scripting language
+    - php7.1 # server-side, HTML-embedded scripting language (metapackage)
+    - php7.1-cli # command-line interpreter for the PHP scripting language
 
 - name: memcached
   apt: name={{ item }} update_cache=yes state=latest
@@ -15,20 +15,20 @@
   when: php_memcached == true
 
 - name: php.ini cli
-  template: src=php7-cli.ini.j2 dest=/etc/php/7.0/cli/php.ini owner=root group=root mode=644
+  template: src=php7-cli.ini.j2 dest=/etc/php/7.1/cli/php.ini owner=root group=root mode=644
 
-## Additional packages
+# Additional packages
 - apt: name={{ item }} update_cache=yes state=latest
   with_items: "{{ php_version7_packages }}"
 
-## Configuration
-- stat: path=/etc/php/7.0/fpm/php-fpm.conf
+# Configuration
+- stat: path=/etc/php/7.1/fpm/php-fpm.conf
   register: php_fpm_conf
 
 - name: php.ini fpm
-  template: src=php7-fpm.ini.j2 dest=/etc/php/7.0/fpm/php.ini owner=root group=root mode=644
+  template: src=php7-fpm.ini.j2 dest=/etc/php/7.1/fpm/php.ini owner=root group=root mode=644
   when: php_fpm_conf.stat.exists == true
 
 - name: php-fpm.conf
-  template: src=php7-fpm.conf.j2 dest=/etc/php/7.0/fpm/php-fpm.conf owner=root group=root mode=644
+  template: src=php7-fpm.conf.j2 dest=/etc/php/7.1/fpm/php-fpm.conf owner=root group=root mode=644
   when: php_fpm_conf.stat.exists == true

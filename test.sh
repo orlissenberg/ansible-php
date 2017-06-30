@@ -16,7 +16,7 @@ cat << EOF > $TMP_DIR/group_vars/webservers
 
 php_install_composer: true
 php_install_laravel: true
-php_laravel_user: laravel
+php_laravel_user: debian
 
 php_error_reporting: "E_ALL"
 php_display_errors: "On"
