@@ -47,7 +47,7 @@ php_version7_packages:
 #  - php7.1-json-dbgsym    # Debug symbols for php7.1-json
 #  - php7.1-ldap           # LDAP module for PHP
 #  - php7.1-ldap-dbgsym    # Debug symbols for php7.1-ldap
-#  - php7.1-mbstring       # MBSTRING module for PHP
+  - php7.1-mbstring       # MBSTRING module for PHP
 #  - php7.1-mbstring-dbgsym # Debug symbols for php7.1-mbstring
   - php7.1-mcrypt         # libmcrypt module for PHP
 #  - php7.1-mcrypt-dbgsym  # Debug symbols for php7.1-mcrypt
@@ -71,7 +71,7 @@ php_version7_packages:
 #  - php7.1-snmp-dbgsym    # Debug symbols for php7.1-snmp
 #  - php7.1-soap           # SOAP module for PHP
 #  - php7.1-soap-dbgsym    # Debug symbols for php7.1-soap
-#  - php7.1-sqlite3        # SQLite3 module for PHP
+  - php7.1-sqlite3        # SQLite3 module for PHP
 #  - php7.1-sqlite3-dbgsym # Debug symbols for php7.1-sqlite3
 #  - php7.1-sybase         # Sybase module for PHP
 #  - php7.1-sybase-dbgsym  # Debug symbols for php7.1-sybase
