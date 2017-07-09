@@ -33,7 +33,7 @@ php_version7_packages:
 #  - php7.1-enchant-dbgsym # Debug symbols for php7.1-enchant
   - php7.1-fpm            # server-side, HTML-embedded scripting language (FPM-CGI binary)
 #  - php7.1-fpm-dbgsym     # Debug symbols for php7.1-fpm
-#  - php7.1-gd             # GD module for PHP
+  - php7.1-gd             # GD module for PHP
 #  - php7.1-gd-dbgsym      # Debug symbols for php7.1-gd
 #  - php7.1-gmp            # GMP module for PHP
 #  - php7.1-gmp-dbgsym     # Debug symbols for php7.1-gmp
