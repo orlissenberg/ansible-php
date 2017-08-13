@@ -77,7 +77,7 @@ php_version7_packages:
 #  - php7.1-sybase-dbgsym  # Debug symbols for php7.1-sybase
 #  - php7.1-tidy           # tidy module for PHP
 #  - php7.1-tidy-dbgsym    # Debug symbols for php7.1-tidy
-#  - php7.1-xml            # DOM, SimpleXML, WDDX, XML, and XSL module for PHP
+  - php7.1-xml            # DOM, SimpleXML, WDDX, XML, and XSL module for PHP
 #  - php7.1-xml-dbgsym     # Debug symbols for php7.1-xml
 #  - php7.1-xmlrpc         # XMLRPC-EPI module for PHP
 #  - php7.1-xmlrpc-dbgsym  # Debug symbols for php7.1-xmlrpc
