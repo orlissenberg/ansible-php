@@ -66,5 +66,10 @@ In the event of failure:
 
 Copy from a fresh installation:
 
-    ﻿sudo cp /etc/php/7.0/fpm/php-fpm.conf /vagrant/ansible/roles/ansible-php/templates/php7-fpm.conf.j2
-    ﻿sudo cp /etc/php/7.0/fpm/php.ini /vagrant/ansible/roles/ansible-php/templates/php7-fpm.ini.j2
+    sudo cp /etc/php/7.3/fpm/php-fpm.conf /vagrant/ansible/roles/ansible-php/templates/php7-fpm.conf.j2
+    sudo cp /etc/php/7.3/fpm/php.ini /vagrant/ansible/roles/ansible-php/templates/php7-fpm.ini.j2
+    sudo cp /etc/php/7.3/cli/php.ini /vagrant/ansible/roles/ansible-php/templates/php7-cli.ini.j2
+
+Checking
+
+    sudo systemctl status php7.3-fpm

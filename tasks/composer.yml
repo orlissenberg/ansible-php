@@ -7,6 +7,7 @@
   shell: curl -sS https://getcomposer.org/installer | php
   args:
     chdir: /tmp
+    warn: false
 
 - name: move composer
   shell: mv /tmp/composer.phar /usr/local/bin/composer

@@ -3,25 +3,19 @@
 
 - apt: name=apt-transport-https update_cache=yes state=latest
 
-# Wheezy
-- include: main-debian7-php5.yml
-  when: ansible_distribution == 'Debian'
-        and ansible_distribution_major_version == '7'
-        and php_major_version == 5
-
 # Jessie
-- include: main-debian8-php5.yml
-  when: ansible_distribution == 'Debian'
-        and ansible_distribution_major_version == '8'
-        and php_major_version == 5
-
 - include: main-debian8-php7.yml
   when: ansible_distribution == 'Debian'
         and ansible_distribution_major_version == '8'
         and php_major_version == 7
 
-# Various
+# Stretch
+- include: main-debian9-php7.yml
+  when: ansible_distribution == 'Debian'
+        and ansible_distribution_major_version == '9'
+        and php_major_version == 7
 
+# Various
 - include: composer.yml
   when: php_install_composer
 

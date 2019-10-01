@@ -2,33 +2,35 @@
 
 # Remove with: sudo apt-get purge 'php7*'
 
-- apt: name={{ item }} update_cache=yes state=latest
-  with_items:
-    - php7.1 # server-side, HTML-embedded scripting language (metapackage)
-    - php7.1-cli # command-line interpreter for the PHP scripting language
+- name: Install PHP
+  apt:
+    name:
+      - php7.3      # server-side, HTML-embedded scripting language (metapackage)
+      - php7.3-cli  # command-line interpreter for the PHP scripting language
+    update_cache: yes
+    state: latest
 
-- name: memcached
-  apt: name={{ item }} update_cache=yes state=latest
-  with_items:
-    - memcached
-    # - memcachedb
+- name: Install memcached
+  apt: name=memcached update_cache=yes state=latest
   when: php_memcached == true
 
-- name: php.ini cli
-  template: src=php7-cli.ini.j2 dest=/etc/php/7.1/cli/php.ini owner=root group=root mode=644
-
-# Additional packages
-- apt: name={{ item }} update_cache=yes state=latest
-  with_items: "{{ php_version7_packages }}"
+- name: Install additional packages
+  apt:
+    name: "{{ php_version7_packages }}"
+    update_cache: yes
+    state: latest
 
 # Configuration
-- stat: path=/etc/php/7.1/fpm/php-fpm.conf
+- stat: path=/etc/php/7.3/fpm/php-fpm.conf
   register: php_fpm_conf
 
 - name: php.ini fpm
-  template: src=php7-fpm.ini.j2 dest=/etc/php/7.1/fpm/php.ini owner=root group=root mode=644
+  template: src=php7-fpm.ini.j2 dest=/etc/php/7.3/fpm/php.ini owner=root group=root mode=644
   when: php_fpm_conf.stat.exists == true
 
 - name: php-fpm.conf
-  template: src=php7-fpm.conf.j2 dest=/etc/php/7.1/fpm/php-fpm.conf owner=root group=root mode=644
+  template: src=php7-fpm.conf.j2 dest=/etc/php/7.3/fpm/php-fpm.conf owner=root group=root mode=644
   when: php_fpm_conf.stat.exists == true
+
+- name: php.ini cli
+  template: src=php7-cli.ini.j2 dest=/etc/php/7.3/cli/php.ini owner=root group=root mode=644
